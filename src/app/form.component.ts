@@ -37,7 +37,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
         }
         .submitted-data {
             margin-top: 32px;
-            backgroud-color: #f0f0f0;
+            background-color: #f0f0f0;
             padding: 16px;
             border-radius: 8px;
         }
@@ -48,7 +48,7 @@ export class formComponent{
     private fb = inject(FormBuilder)
     form = this.fb.group({
         name: ['', Validators.required],
-        email: ['', Validators.required]
+        email: ['', [Validators.required, Validators.email]]
     })
     subimittedData: any = null
     onSubmit(){
